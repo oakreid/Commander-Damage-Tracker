@@ -1,0 +1,1327 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/mtg_font"
+    tools:context="oreid.commanderdamagetracker.LifeTotals">
+
+
+    <GridLayout
+        android:id="@+id/four_player_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_dark"
+        android:columnCount="2"
+        android:rowCount="2">
+
+        <GridLayout
+            android:id="@+id/white_corner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_columnWeight="0"
+            android:layout_gravity="fill"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:background="@color/mtg_white"
+            android:columnCount="2"
+            android:rotation="-180"
+            android:rowCount="2">
+
+            <LinearLayout
+                android:id="@+id/white_life_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/white_life_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:onClick="wLifeDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/white_life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="80dp" />
+
+                <Button
+                    android:id="@+id/white_life_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:elevation="0dp"
+                    android:onClick="wLifeInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/white_times_cast_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/white_times_cast_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:onClick="wTCDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/white_times_cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/white_times_cast_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:elevation="0dp"
+                    android:onClick="wTCInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/white_cmdr_dmg_layout_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/white_cmdr_dmg_u_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:onClick="wUDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/white_cmdr_dmg_u"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/white_cmdr_dmg_u_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:elevation="0dp"
+                    android:onClick="wUDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/white_cmdr_dmg_r_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:onClick="wRDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/white_cmdr_dmg_r"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/white_cmdr_dmg_r_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:elevation="0dp"
+                    android:onClick="wRDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/white_cmdr_dmg_layout_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/white_cmdr_dmg_g_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:onClick="wGDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/white_cmdr_dmg_g"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/white_cmdr_dmg_g_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_white"
+                    android:elevation="0dp"
+                    android:onClick="wGDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/blue_corner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:background="@color/mtg_blue"
+            android:columnCount="2"
+            android:rotation="-180"
+            android:rowCount="2">
+
+            <LinearLayout
+                android:id="@+id/blue_life_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/blue_life_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:onClick="uLifeDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/blue_life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="80dp" />
+
+                <Button
+                    android:id="@+id/blue_life_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:elevation="0dp"
+                    android:onClick="uLifeInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/blue_times_cast_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/blue_times_cast_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:onClick="uTCDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/blue_times_cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/blue_times_cast_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:elevation="0dp"
+                    android:onClick="uTCInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/blue_cmdr_dmg_layout_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/blue_cmdr_dmg_r_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:onClick="uRDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/blue_cmdr_dmg_r"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/blue_cmdr_dmg_r_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:elevation="0dp"
+                    android:onClick="uRDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/blue_cmdr_dmg_g_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:onClick="uGDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/blue_cmdr_dmg_g"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/blue_cmdr_dmg_g_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:elevation="0dp"
+                    android:onClick="uGDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/blue_cmdr_dmg_layout_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/blue_cmdr_dmg_w_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:onClick="uWDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/blue_cmdr_dmg_w"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/blue_cmdr_dmg_w_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_blue"
+                    android:elevation="0dp"
+                    android:onClick="uWDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/green_corner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:background="@color/mtg_green"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <LinearLayout
+                android:id="@+id/green_life_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/green_life_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:onClick="gLifeDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/green_life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="80dp" />
+
+                <Button
+                    android:id="@+id/green_life_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:elevation="0dp"
+                    android:onClick="gLifeInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/green_times_cast_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/green_times_cast_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:onClick="gTCDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/green_times_cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/green_times_cast_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:elevation="0dp"
+                    android:onClick="gTCInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/green_cmdr_dmg_layout_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/green_cmdr_dmg_w_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:onClick="gWDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/green_cmdr_dmg_w"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/green_cmdr_dmg_w_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:elevation="0dp"
+                    android:onClick="gWDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/green_cmdr_dmg_u_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:onClick="gUDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/green_cmdr_dmg_u"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/green_cmdr_dmg_u_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:elevation="0dp"
+                    android:onClick="gUDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/green_cmdr_dmg_layout_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/green_cmdr_dmg_r_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:onClick="gRDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/green_cmdr_dmg_r"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/green_cmdr_dmg_r_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_green"
+                    android:elevation="0dp"
+                    android:onClick="gRDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_red"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+        </GridLayout>
+
+        <GridLayout
+            android:id="@+id/red_corner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_column="1"
+            android:layout_columnWeight="0"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:background="@color/mtg_red"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <LinearLayout
+                android:id="@+id/red_life_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/red_life_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:onClick="rLifeDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/red_life"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="80dp" />
+
+                <Button
+                    android:id="@+id/red_life_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:elevation="0dp"
+                    android:onClick="rLifeInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/red_times_cast_layout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="0"
+                android:layout_rowWeight="2"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/red_times_cast_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:onClick="rTCDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/red_times_cast"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/red_times_cast_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:elevation="0dp"
+                    android:onClick="rTCInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_font"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/red_cmdr_dmg_layout_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/red_cmdr_dmg_g_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:onClick="rGDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/red_cmdr_dmg_g"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/red_cmdr_dmg_g_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:elevation="0dp"
+                    android:onClick="rGDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_green"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/red_cmdr_dmg_w_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:onClick="rWDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/red_cmdr_dmg_w"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.0"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/red_cmdr_dmg_w_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:elevation="0dp"
+                    android:onClick="rWDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_white"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/red_cmdr_dmg_layout_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:gravity="fill"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/red_cmdr_dmg_u_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:onClick="rUDmgDec"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="-"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="20dp" />
+
+                <EditText
+                    android:id="@+id/red_cmdr_dmg_u"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:inputType="numberSigned"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="30dp" />
+
+                <Button
+                    android:id="@+id/red_cmdr_dmg_u_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="@color/mtg_red"
+                    android:elevation="0dp"
+                    android:onClick="rUDmgInc"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="2.0"
+                    android:stateListAnimator="@null"
+                    android:text="+"
+                    android:textColor="@color/mtg_blue"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+        </GridLayout>
+    </GridLayout>
+</FrameLayout>
