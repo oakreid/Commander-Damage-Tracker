@@ -34,7 +34,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_column="0"
-                android:layout_columnWeight="2"
+                android:layout_columnWeight="2.3"
                 android:layout_row="0"
                 android:layout_rowWeight="2"
                 android:gravity="fill"
@@ -54,14 +54,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/white_life"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="6"
+                    android:layout_weight="3"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -69,7 +68,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="80dp" />
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/white_life_plus"
@@ -86,8 +85,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -116,8 +114,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/white_times_cast"
@@ -134,8 +131,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/white_times_cast_plus"
@@ -152,8 +148,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -182,14 +177,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_blue" />
 
                 <EditText
                     android:id="@+id/white_cmdr_dmg_u"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -200,8 +194,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_blue" />
 
                 <Button
                     android:id="@+id/white_cmdr_dmg_u_plus"
@@ -218,8 +211,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_blue" />
 
                 <Button
                     android:id="@+id/white_cmdr_dmg_r_minus"
@@ -235,14 +227,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_red" />
 
                 <EditText
                     android:id="@+id/white_cmdr_dmg_r"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -253,8 +244,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_red" />
 
                 <Button
                     android:id="@+id/white_cmdr_dmg_r_plus"
@@ -271,8 +261,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_red" />
 
             </LinearLayout>
 
@@ -301,8 +290,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_green" />
 
                 <EditText
                     android:id="@+id/white_cmdr_dmg_g"
@@ -319,8 +307,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_green" />
 
                 <Button
                     android:id="@+id/white_cmdr_dmg_g_plus"
@@ -337,8 +324,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_green" />
 
             </LinearLayout>
 
@@ -383,14 +369,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/blue_life"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="6"
+                    android:layout_weight="3"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -398,7 +383,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="80dp" />
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/blue_life_plus"
@@ -415,8 +400,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -445,8 +429,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/blue_times_cast"
@@ -463,8 +446,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/blue_times_cast_plus"
@@ -481,8 +463,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -491,7 +472,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_column="0"
-                android:layout_columnWeight="2"
+                android:layout_columnWeight="2.3"
                 android:layout_row="1"
                 android:layout_rowWeight="1"
                 android:gravity="fill"
@@ -511,14 +492,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_red" />
 
                 <EditText
                     android:id="@+id/blue_cmdr_dmg_r"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -529,8 +509,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_red" />
 
                 <Button
                     android:id="@+id/blue_cmdr_dmg_r_plus"
@@ -547,8 +526,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_red" />
 
                 <Button
                     android:id="@+id/blue_cmdr_dmg_g_minus"
@@ -564,14 +542,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_green" />
 
                 <EditText
                     android:id="@+id/blue_cmdr_dmg_g"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -582,8 +559,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_green" />
 
                 <Button
                     android:id="@+id/blue_cmdr_dmg_g_plus"
@@ -600,8 +576,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_green" />
             </LinearLayout>
 
             <LinearLayout
@@ -629,8 +604,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_white" />
 
                 <EditText
                     android:id="@+id/blue_cmdr_dmg_w"
@@ -647,8 +621,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_white" />
 
                 <Button
                     android:id="@+id/blue_cmdr_dmg_w_plus"
@@ -665,8 +638,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_white" />
 
             </LinearLayout>
         </GridLayout>
@@ -709,14 +681,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/green_life"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="6"
+                    android:layout_weight="3"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -724,7 +695,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="80dp" />
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/green_life_plus"
@@ -741,8 +712,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -771,8 +741,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/green_times_cast"
@@ -789,8 +758,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/green_times_cast_plus"
@@ -807,8 +775,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -817,7 +784,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_column="0"
-                android:layout_columnWeight="2"
+                android:layout_columnWeight="2.3"
                 android:layout_row="1"
                 android:layout_rowWeight="1"
                 android:gravity="fill"
@@ -837,14 +804,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_white" />
 
                 <EditText
                     android:id="@+id/green_cmdr_dmg_w"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -855,8 +821,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_white" />
 
                 <Button
                     android:id="@+id/green_cmdr_dmg_w_plus"
@@ -873,8 +838,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_white" />
 
                 <Button
                     android:id="@+id/green_cmdr_dmg_u_minus"
@@ -890,14 +854,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_blue" />
 
                 <EditText
                     android:id="@+id/green_cmdr_dmg_u"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -908,8 +871,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_blue" />
 
                 <Button
                     android:id="@+id/green_cmdr_dmg_u_plus"
@@ -926,8 +888,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_blue" />
             </LinearLayout>
 
             <LinearLayout
@@ -955,8 +916,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_red" />
 
                 <EditText
                     android:id="@+id/green_cmdr_dmg_r"
@@ -973,8 +933,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_red" />
 
                 <Button
                     android:id="@+id/green_cmdr_dmg_r_plus"
@@ -991,8 +950,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_red"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_red" />
 
             </LinearLayout>
 
@@ -1036,14 +994,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/red_life"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="6"
+                    android:layout_weight="3"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -1051,7 +1008,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="80dp" />
+                    android:textSize="50sp" />
 
                 <Button
                     android:id="@+id/red_life_plus"
@@ -1068,8 +1025,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -1098,8 +1054,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/red_times_cast"
@@ -1116,8 +1071,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/red_times_cast_plus"
@@ -1134,8 +1088,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_font"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -1144,7 +1097,7 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_column="0"
-                android:layout_columnWeight="2"
+                android:layout_columnWeight="2.3"
                 android:layout_row="1"
                 android:layout_rowWeight="1"
                 android:gravity="fill"
@@ -1164,14 +1117,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_green" />
 
                 <EditText
                     android:id="@+id/red_cmdr_dmg_g"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -1182,8 +1134,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_green" />
 
                 <Button
                     android:id="@+id/red_cmdr_dmg_g_plus"
@@ -1200,8 +1151,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_green"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_green" />
 
                 <Button
                     android:id="@+id/red_cmdr_dmg_w_minus"
@@ -1217,14 +1167,13 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_white" />
 
                 <EditText
                     android:id="@+id/red_cmdr_dmg_w"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3.0"
+                    android:layout_weight="2.8"
                     android:backgroundTint="@android:color/transparent"
                     android:clickable="false"
                     android:ems="10"
@@ -1235,8 +1184,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_white" />
 
                 <Button
                     android:id="@+id/red_cmdr_dmg_w_plus"
@@ -1253,8 +1201,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_white"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_white" />
             </LinearLayout>
 
             <LinearLayout
@@ -1282,8 +1229,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="-"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_blue" />
 
                 <EditText
                     android:id="@+id/red_cmdr_dmg_u"
@@ -1300,8 +1246,7 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="30dp" />
+                    android:textColor="@color/mtg_blue" />
 
                 <Button
                     android:id="@+id/red_cmdr_dmg_u_plus"
@@ -1318,8 +1263,7 @@
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
                     android:text="+"
-                    android:textColor="@color/mtg_blue"
-                    android:textSize="20dp" />
+                    android:textColor="@color/mtg_blue" />
 
             </LinearLayout>
         </GridLayout>
