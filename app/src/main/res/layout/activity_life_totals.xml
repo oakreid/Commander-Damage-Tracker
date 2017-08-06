@@ -68,7 +68,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="50sp" />
+                    android:textSize="36sp" />
 
                 <Button
                     android:id="@+id/white_life_plus"
@@ -383,7 +383,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="50sp" />
+                    android:textSize="36sp" />
 
                 <Button
                     android:id="@+id/blue_life_plus"
@@ -695,7 +695,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="50sp" />
+                    android:textSize="36sp" />
 
                 <Button
                     android:id="@+id/green_life_plus"
@@ -1008,7 +1008,7 @@
                     android:gravity="center"
                     android:inputType="numberSigned"
                     android:textColor="@color/mtg_font"
-                    android:textSize="50sp" />
+                    android:textSize="36sp" />
 
                 <Button
                     android:id="@+id/red_life_plus"
