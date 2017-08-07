@@ -10,25 +10,25 @@ import android.widget.TextView;
  * status bar and navigation/system bar) with user interaction.
  */
 public class LifeTotals extends AppCompatActivity {
-
-    int g_life = 40;
-    int g_times_cast = 0;
-    int g_dmg_by_w = 0;
-    int g_dmg_by_u = 0;
-    int g_dmg_by_r = 0;
-
+    //White Corner
     int w_life = 40;
     int w_times_cast = 0;
     int w_dmg_by_u = 0;
     int w_dmg_by_r = 0;
     int w_dmg_by_g = 0;
-
+    //Blue Corner
     int u_life = 40;
     int u_times_cast = 0;
     int u_dmg_by_r = 0;
     int u_dmg_by_g = 0;
     int u_dmg_by_w = 0;
-
+    //Green Corner
+    int g_life = 40;
+    int g_times_cast = 0;
+    int g_dmg_by_w = 0;
+    int g_dmg_by_u = 0;
+    int g_dmg_by_r = 0;
+    //Red Corner
     int r_life = 40;
     int r_times_cast = 0;
     int r_dmg_by_g = 0;
@@ -322,14 +322,7 @@ public class LifeTotals extends AppCompatActivity {
     //First attempt at a method that will allow the counters to be reset in-app
     //SIDE EFFECTS: All Life Totals will return to 40 and all counter will go to 0
     //Attempt one-the hardcode
-    //It's gonna look nasty
     public void reset(View view) {
-        //Green Corner
-        g_life = 40;
-        g_times_cast = 0;
-        g_dmg_by_w = 0;
-        g_dmg_by_u = 0;
-        g_dmg_by_r = 0;
         //White Corner
         w_life = 40;
         w_times_cast = 0;
@@ -342,13 +335,19 @@ public class LifeTotals extends AppCompatActivity {
         u_dmg_by_r = 0;
         u_dmg_by_g = 0;
         u_dmg_by_w = 0;
+        //Green Corner
+        g_life = 40;
+        g_times_cast = 0;
+        g_dmg_by_w = 0;
+        g_dmg_by_u = 0;
+        g_dmg_by_r = 0;
         //Red Corner
         r_life = 40;
         r_times_cast = 0;
         r_dmg_by_g = 0;
         r_dmg_by_w = 0;
         r_dmg_by_u = 0;
-
+        //Should display all changes to all counters done by the reset
         initializeAllCounters();
     }
 
