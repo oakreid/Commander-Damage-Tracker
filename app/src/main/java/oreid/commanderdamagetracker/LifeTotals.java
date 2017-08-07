@@ -319,6 +319,39 @@ public class LifeTotals extends AppCompatActivity {
         v.setText("" + number);
     }
 
+    //First attempt at a method that will allow the counters to be reset in-app
+    //SIDE EFFECTS: All Life Totals will return to 40 and all counter will go to 0
+    //Attempt one-the hardcode
+    //It's gonna look nasty
+    public void reset(View view) {
+        //Green Corner
+        g_life = 40;
+        g_times_cast = 0;
+        g_dmg_by_w = 0;
+        g_dmg_by_u = 0;
+        g_dmg_by_r = 0;
+        //White Corner
+        w_life = 40;
+        w_times_cast = 0;
+        w_dmg_by_u = 0;
+        w_dmg_by_r = 0;
+        w_dmg_by_g = 0;
+        //Blue Corner
+        u_life = 40;
+        u_times_cast = 0;
+        u_dmg_by_r = 0;
+        u_dmg_by_g = 0;
+        u_dmg_by_w = 0;
+        //Red Corner
+        r_life = 40;
+        r_times_cast = 0;
+        r_dmg_by_g = 0;
+        r_dmg_by_w = 0;
+        r_dmg_by_u = 0;
+
+        initializeAllCounters();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
