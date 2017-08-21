@@ -1,5 +1,6 @@
 package oreid.commanderdamagetracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -313,6 +314,10 @@ public class LifeTotals extends AppCompatActivity {
         TextView displayInteger = (TextView) findViewById(
                 R.id.white_cmdr_dmg_g);
         displayCounter(w_dmg_by_g, displayInteger);
+    }
+
+    public void gotoSettings(View view) {
+        startActivity(new Intent(LifeTotals.this, SettingsMenu.class));
     }
 
     private void displayCounter(int number, TextView v) {
