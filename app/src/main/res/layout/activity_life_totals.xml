@@ -16,7 +16,7 @@
         android:background="@null"
         android:elevation="1dp"
         android:onClick="reset"
-        app:srcCompat="@mipmap/resetbtn" />
+        app:srcCompat="@mipmap/hd_resetbtn" />
 
     <GridLayout
         android:id="@+id/four_player_grid"
