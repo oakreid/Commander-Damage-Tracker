@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_frame"
     android:layout_width="fill_parent"
@@ -7,13 +8,15 @@
     tools:context="oreid.commanderdamagetracker.LifeTotals">
 
 
-    <Button
-        android:id="@+id/button"
+    <ImageButton
+        android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:elevation="1dp"
         android:onClick="reset"
-        android:text="Reset" />
+        app:srcCompat="@mipmap/resetbtn" />
 
     <GridLayout
         android:id="@+id/four_player_grid"
