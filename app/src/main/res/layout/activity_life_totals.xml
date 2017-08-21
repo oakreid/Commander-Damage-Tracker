@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_frame"
     android:layout_width="fill_parent"
@@ -14,19 +15,23 @@
         android:elevation="1dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/reset_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ImageButton
+            android:id="@+id/reset_img_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
             android:onClick="reset"
-            android:text="Reset" />
+            app:srcCompat="@mipmap/reset" />
 
-        <Button
-            android:id="@+id/setings_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ImageButton
+            android:id="@+id/menu_img_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
             android:onClick="gotoSettings"
-            android:text="Settings" />
+            app:srcCompat="@mipmap/menu_launcher" />
 
     </LinearLayout>
 
