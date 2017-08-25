@@ -23,310 +23,186 @@ public class LifeTotals extends AppCompatActivity {
     |                   |                    |
     +----------------------------------------+
      */
-
+    int lifeTotal = 40;
     //player_2 Corner
-    int player_2_life = 40;
+    int player_2_life = lifeTotal;
     int player_2_times_cast = 0;
     int player_2_dmg_by_1 = 0;
     int player_2_dmg_by_4 = 0;
     int player_2_dmg_by_3 = 0;
     //player_1 Corner
-    int player_1_life = 40;
+    int player_1_life = lifeTotal;
     int player_1_times_cast = 0;
     int player_1_dmg_by_4 = 0;
     int player_1_dmg_by_3 = 0;
     int player_1_dmg_by_2 = 0;
     //player_3 Corner
-    int player_3_life = 40;
+    int player_3_life = lifeTotal;
     int player_3_times_cast = 0;
     int player_3_dmg_by_2 = 0;
     int player_3_dmg_by_1 = 0;
     int player_3_dmg_by_4 = 0;
     //player_4 Corner
-    int player_4_life = 40;
+    int player_4_life = lifeTotal;
     int player_4_times_cast = 0;
     int player_4_dmg_by_3 = 0;
     int player_4_dmg_by_2 = 0;
     int player_4_dmg_by_1 = 0;
 
-    public void gLifeInc(View view) {
-        player_3_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_life);
-        displayCounter(player_3_life, displayInteger);
+    public void playerThreeUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_3_life":
+                rid = R.id.player_3_life;
+                player_3_life += change;
+                counterToChange = player_3_life;
+                break;
+            case "player_3_times_cast":
+                rid = R.id.player_3_times_cast;
+                player_3_times_cast += change;
+                counterToChange = player_3_times_cast;
+                break;
+            case "player_3_dmg_by_2":
+                rid = R.id.player_3_cmdr_dmg_2;
+                player_3_dmg_by_2 += change;
+                counterToChange = player_3_dmg_by_2;
+                break;
+            case "player_3_dmg_by_1":
+                rid = R.id.player_3_cmdr_dmg_1;
+                player_3_dmg_by_1 += change;
+                counterToChange = player_3_dmg_by_1;
+                break;
+            case "player_3_dmg_by_4":
+                rid = R.id.player_3_cmdr_dmg_4;
+                player_3_dmg_by_4 += change;
+                counterToChange = player_3_dmg_by_4;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
+    }
+    //End of tester
+    public void playerFourUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_4_life":
+                rid = R.id.player_4_life;
+                player_4_life += change;
+                counterToChange = player_4_life;
+                break;
+            case "player_4_times_cast":
+                rid = R.id.player_4_times_cast;
+                player_4_times_cast += change;
+                counterToChange = player_4_times_cast;
+                break;
+            case "player_4_dmg_by_2":
+                rid = R.id.player_4_cmdr_dmg_2;
+                player_4_dmg_by_2 += change;
+                counterToChange = player_4_dmg_by_2;
+                break;
+            case "player_4_dmg_by_1":
+                rid = R.id.player_4_cmdr_dmg_1;
+                player_4_dmg_by_1 += change;
+                counterToChange = player_4_dmg_by_1;
+                break;
+            case "player_4_dmg_by_3":
+                rid = R.id.player_4_cmdr_dmg_3;
+                player_4_dmg_by_3 += change;
+                counterToChange = player_4_dmg_by_3;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
     }
 
-    public void gLifeDec(View view) {
-        player_3_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_life);
-        displayCounter(player_3_life, displayInteger);
+    public void playerOneUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_1_life":
+                rid = R.id.player_1_life;
+                player_1_life += change;
+                counterToChange = player_1_life;
+                break;
+            case "player_1_times_cast":
+                rid = R.id.player_1_times_cast;
+                player_1_times_cast += change;
+                counterToChange = player_1_times_cast;
+                break;
+            case "player_1_dmg_by_2":
+                rid = R.id.player_1_cmdr_dmg_2;
+                player_1_dmg_by_2 += change;
+                counterToChange = player_1_dmg_by_2;
+                break;
+            case "player_1_dmg_by_4":
+                rid = R.id.player_1_cmdr_dmg_4;
+                player_1_dmg_by_4 += change;
+                counterToChange = player_1_dmg_by_4;
+                break;
+            case "player_1_dmg_by_3":
+                rid = R.id.player_1_cmdr_dmg_3;
+                player_1_dmg_by_3 += change;
+                counterToChange = player_1_dmg_by_3;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
     }
 
-    public void gTCInc(View view) {
-        player_3_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_times_cast);
-        displayCounter(player_3_times_cast, displayInteger);
-    }
-
-    public void gTCDec(View view) {
-        player_3_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_times_cast);
-        displayCounter(player_3_times_cast, displayInteger);
-    }
-
-    public void gWDmgInc(View view) {
-        player_3_dmg_by_2 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_cmdr_dmg_2);
-        displayCounter(player_3_dmg_by_2, displayInteger);
-    }
-
-    public void gWDmgDec(View view) {
-        player_3_dmg_by_2 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_cmdr_dmg_2);
-        displayCounter(player_3_dmg_by_2, displayInteger);
-    }
-
-    public void gUDmgInc(View view) {
-        player_3_dmg_by_1 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_cmdr_dmg_1);
-        displayCounter(player_3_dmg_by_1, displayInteger);
-    }
-
-    public void gUDmgDec(View view) {
-        player_3_dmg_by_1--;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_cmdr_dmg_1);
-        displayCounter(player_3_dmg_by_1, displayInteger);
-    }
-
-    public void gRDmgInc(View view) {
-        player_3_dmg_by_4 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_cmdr_dmg_4);
-        displayCounter(player_3_dmg_by_4, displayInteger);
-    }
-
-    public void gRDmgDec(View view) {
-        player_3_dmg_by_4 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_3_cmdr_dmg_4);
-        displayCounter(player_3_dmg_by_4, displayInteger);
-    }
-
-    public void rLifeInc(View view) {
-        player_4_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_life);
-        displayCounter(player_4_life, displayInteger);
-    }
-
-    public void rLifeDec(View view) {
-        player_4_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_life);
-        displayCounter(player_4_life, displayInteger);
-    }
-
-    public void rTCInc(View view) {
-        player_4_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_times_cast);
-        displayCounter(player_4_times_cast, displayInteger);
-    }
-
-    public void rTCDec(View view) {
-        player_4_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_times_cast);
-        displayCounter(player_4_times_cast, displayInteger);
-    }
-
-    public void rWDmgInc(View view) {
-        player_4_dmg_by_2 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_cmdr_dmg_2);
-        displayCounter(player_4_dmg_by_2, displayInteger);
-    }
-
-    public void rWDmgDec(View view) {
-        player_4_dmg_by_2 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_cmdr_dmg_2);
-        displayCounter(player_4_dmg_by_2, displayInteger);
-    }
-
-    public void rUDmgInc(View view) {
-        player_4_dmg_by_1 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_cmdr_dmg_1);
-        displayCounter(player_4_dmg_by_1, displayInteger);
-    }
-
-    public void rUDmgDec(View view) {
-        player_4_dmg_by_1 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_cmdr_dmg_1);
-        displayCounter(player_4_dmg_by_1, displayInteger);
-    }
-
-    public void rGDmgInc(View view) {
-        player_4_dmg_by_3 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_cmdr_dmg_3);
-        displayCounter(player_4_dmg_by_3, displayInteger);
-    }
-
-    public void rGDmgDec(View view) {
-        player_4_dmg_by_3 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_4_cmdr_dmg_3);
-        displayCounter(player_4_dmg_by_3, displayInteger);
-    }
-
-    public void uLifeInc(View view) {
-        player_1_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_life);
-        displayCounter(player_1_life, displayInteger);
-    }
-
-    public void uLifeDec(View view) {
-        player_1_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_life);
-        displayCounter(player_1_life, displayInteger);
-    }
-
-    public void uTCInc(View view) {
-        player_1_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_times_cast);
-        displayCounter(player_1_times_cast, displayInteger);
-    }
-
-    public void uTCDec(View view) {
-        player_1_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_times_cast);
-        displayCounter(player_1_times_cast, displayInteger);
-    }
-
-    public void uWDmgInc(View view) {
-        player_1_dmg_by_2 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_cmdr_dmg_2);
-        displayCounter(player_1_dmg_by_2, displayInteger);
-    }
-
-    public void uWDmgDec(View view) {
-        player_1_dmg_by_2 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_cmdr_dmg_2);
-        displayCounter(player_1_dmg_by_2, displayInteger);
-    }
-
-    public void uRDmgInc(View view) {
-        player_1_dmg_by_4 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_cmdr_dmg_4);
-        displayCounter(player_1_dmg_by_4, displayInteger);
-    }
-
-    public void uRDmgDec(View view) {
-        player_1_dmg_by_4 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_cmdr_dmg_4);
-        displayCounter(player_1_dmg_by_4, displayInteger);
-    }
-
-    public void uGDmgInc(View view) {
-        player_1_dmg_by_3 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_cmdr_dmg_3);
-        displayCounter(player_1_dmg_by_3, displayInteger);
-    }
-
-    public void uGDmgDec(View view) {
-        player_1_dmg_by_3 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_1_cmdr_dmg_3);
-        displayCounter(player_1_dmg_by_3, displayInteger);
-    }
-
-    public void wLifeInc(View view) {
-        player_2_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_life);
-        displayCounter(player_2_life, displayInteger);
-    }
-
-    public void wLifeDec(View view) {
-        player_2_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_life);
-        displayCounter(player_2_life, displayInteger);
-    }
-
-    public void wTCInc(View view) {
-        player_2_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_times_cast);
-        displayCounter(player_2_times_cast, displayInteger);
-    }
-
-    public void wTCDec(View view) {
-        player_2_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_times_cast);
-        displayCounter(player_2_times_cast, displayInteger);
-    }
-
-    public void wUDmgInc(View view) {
-        player_2_dmg_by_1 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_cmdr_dmg_1);
-        displayCounter(player_2_dmg_by_1, displayInteger);
-    }
-
-    public void wUDmgDec(View view) {
-        player_2_dmg_by_1 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_cmdr_dmg_1);
-        displayCounter(player_2_dmg_by_1, displayInteger);
-    }
-
-    public void wRDmgInc(View view) {
-        player_2_dmg_by_4 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_cmdr_dmg_4);
-        displayCounter(player_2_dmg_by_4, displayInteger);
-    }
-
-    public void wRDmgDec(View view) {
-        player_2_dmg_by_4 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_cmdr_dmg_4);
-        displayCounter(player_2_dmg_by_4, displayInteger);
-    }
-
-    public void wGDmgInc(View view) {
-        player_2_dmg_by_3 ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_cmdr_dmg_3);
-        displayCounter(player_2_dmg_by_3, displayInteger);
-    }
-
-    public void wGDmgDec(View view) {
-        player_2_dmg_by_3 --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.player_2_cmdr_dmg_3);
-        displayCounter(player_2_dmg_by_3, displayInteger);
+    public void playerTwoUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_2_life":
+                rid = R.id.player_2_life;
+                player_2_life += change;
+                counterToChange = player_2_life;
+                break;
+            case "player_2_times_cast":
+                rid = R.id.player_2_times_cast;
+                player_2_times_cast += change;
+                counterToChange = player_2_times_cast;
+                break;
+            case "player_2_dmg_by_1":
+                rid = R.id.player_2_cmdr_dmg_1;
+                player_2_dmg_by_1 += change;
+                counterToChange = player_2_dmg_by_1;
+                break;
+            case "player_2_dmg_by_4":
+                rid = R.id.player_2_cmdr_dmg_4;
+                player_2_dmg_by_4 += change;
+                counterToChange = player_2_dmg_by_4;
+                break;
+            case "player_2_dmg_by_3":
+                rid = R.id.player_2_cmdr_dmg_3;
+                player_2_dmg_by_3 += change;
+                counterToChange = player_2_dmg_by_3;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
     }
 
     public void gotoSettings(View view) {
@@ -337,30 +213,38 @@ public class LifeTotals extends AppCompatActivity {
         v.setText("" + number);
     }
 
+    public void displayChange(int cid, int counter) {
+        TextView displayInteger = (TextView) findViewById(cid);
+        displayCounter(counter, displayInteger);
+    }
+
+    public void restart(View view) {
+        resetCounters();
+    }
     //First attempt at a method that will allow the counters to be reset in-app
     //SIDE EFFECTS: All Life Totals will return to 40 and all counter will go to 0
     //Attempt one-the hardcode
-    public void reset(View view) {
+    public void resetCounters() {
         //player_2 Corner
-        player_2_life = 40;
+        player_2_life = lifeTotal;
         player_2_times_cast = 0;
         player_2_dmg_by_1 = 0;
         player_2_dmg_by_4 = 0;
         player_2_dmg_by_3 = 0;
         //player_1 Corner
-        player_1_life = 40;
+        player_1_life = lifeTotal;
         player_1_times_cast = 0;
         player_1_dmg_by_4 = 0;
         player_1_dmg_by_3 = 0;
         player_1_dmg_by_2 = 0;
         //player_3 Corner
-        player_3_life = 40;
+        player_3_life = lifeTotal;
         player_3_times_cast = 0;
         player_3_dmg_by_2 = 0;
         player_3_dmg_by_1 = 0;
         player_3_dmg_by_4 = 0;
         //player_4 Corner
-        player_4_life = 40;
+        player_4_life = lifeTotal;
         player_4_times_cast = 0;
         player_4_dmg_by_3 = 0;
         player_4_dmg_by_2 = 0;
@@ -377,11 +261,11 @@ public class LifeTotals extends AppCompatActivity {
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
         setContentView(R.layout.activity_life_totals);
-
-        initializeAllCounters();
+        resetCounters();
     }
 
     private void initializeAllCounters() {
+
         displayCounter(player_3_life, (TextView) findViewById(
                 R.id.player_3_life));
 
