@@ -50,6 +50,8 @@ public class LifeTotals extends AppCompatActivity {
     int player_4_dmg_by_3 = 0;
     int player_4_dmg_by_2 = 0;
     int player_4_dmg_by_1 = 0;
+    //Settings
+    SharedPreferences settings;
 
     public void playerThreeUpdate(View v) {
         //values generated through the xml tags on buttons
@@ -59,7 +61,7 @@ public class LifeTotals extends AppCompatActivity {
         //values filled by Switch statement
         int rid = 0;
         int counterToChange = 0;
-        switch(field) {
+        switch (field) {
             case "player_3_life":
                 rid = R.id.player_3_life;
                 player_3_life += change;
@@ -87,14 +89,7 @@ public class LifeTotals extends AppCompatActivity {
                 break;
             default:
         }
-        displayChange(rid,counterToChange);
-    SharedPreferences settings;
-
-    public void gLifeInc(View view) {
-        g_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_life);
-        displayCounter(g_life, displayInteger);
+        displayChange(rid, counterToChange);
     }
     //End of tester
     public void playerFourUpdate(View v) {
@@ -275,10 +270,11 @@ public class LifeTotals extends AppCompatActivity {
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
                 switch (key) {
                     case "starting_life":
-                        w_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        r_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        g_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        u_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        player_2_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        player_4_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        player_3_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        player_1_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        lifeTotal = Integer.parseInt(sharedPreferences.getString(key, "40"));
                         break;
                     case "p1_color":
                         //do stuff
