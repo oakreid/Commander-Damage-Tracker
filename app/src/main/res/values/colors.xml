@@ -6,6 +6,7 @@
 
     <color name="black_overlay">#66000000</color>
 
+    <color name="mtg_black">#CBC2BF</color>
     <color name="mtg_green">#93cba4</color>
     <color name="mtg_red">#eea489</color>
     <color name="mtg_blue">#a9dcef</color>

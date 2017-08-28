@@ -1,6 +1,8 @@
 package oreid.commanderdamagetracker;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +38,8 @@ public class LifeTotals extends AppCompatActivity {
     int r_dmg_by_g = 0;
     int r_dmg_by_w = 0;
     int r_dmg_by_u = 0;
+
+    SharedPreferences settings;
 
     public void gLifeInc(View view) {
         g_life ++;
@@ -363,6 +367,34 @@ public class LifeTotals extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        settings = PreferenceManager.getDefaultSharedPreferences(this);
+        settings.registerOnSharedPreferenceChangeListener(
+                new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                switch (key) {
+                    case "starting_life":
+                        w_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        r_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        g_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        u_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                        break;
+                    case "p1_color":
+                        //do stuff
+                        break;
+                    case "p2_color":
+                        //do stuff
+                        break;
+                    case "p3_color":
+                        //do stuff
+                        break;
+                    case "p4_color":
+                        //do stuff
+                        break;
+                 }
+                 initializeAllCounters();
+            }
+        });
 
         setContentView(R.layout.activity_life_totals);
 

@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="pref_example_list_titles">
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
+    <string-array name="color_names">
+        <item>Black</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>White</item>
+        <item>Blue</item>
     </string-array>
-    <string-array name="pref_example_list_values">
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
+
+    <string-array name="life_total_options">
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>60</item>
     </string-array>
 </resources>
