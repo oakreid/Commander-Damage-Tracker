@@ -14,31 +14,80 @@ import android.widget.TextView;
  * status bar and navigation/system bar) with user interaction.
  */
 public class LifeTotals extends AppCompatActivity {
-    //White Corner
-    int w_life = 40;
-    int w_times_cast = 0;
-    int w_dmg_by_u = 0;
-    int w_dmg_by_r = 0;
-    int w_dmg_by_g = 0;
-    //Blue Corner
-    int u_life = 40;
-    int u_times_cast = 0;
-    int u_dmg_by_r = 0;
-    int u_dmg_by_g = 0;
-    int u_dmg_by_w = 0;
-    //Green Corner
-    int g_life = 40;
-    int g_times_cast = 0;
-    int g_dmg_by_w = 0;
-    int g_dmg_by_u = 0;
-    int g_dmg_by_r = 0;
-    //Red Corner
-    int r_life = 40;
-    int r_times_cast = 0;
-    int r_dmg_by_g = 0;
-    int r_dmg_by_w = 0;
-    int r_dmg_by_u = 0;
+    /*
+    +----------------------------------------+
+    |                   |                    |
+    |     player_2      |     player_1       |
+    |                   |                    |
+    --------------------|---------------------
+    |                   |                    |
+    |     player_3      |     player_4       |
+    |                   |                    |
+    +----------------------------------------+
+     */
+    int lifeTotal = 40;
+    //player_2 Corner
+    int player_2_life = lifeTotal;
+    int player_2_times_cast = 0;
+    int player_2_dmg_by_1 = 0;
+    int player_2_dmg_by_4 = 0;
+    int player_2_dmg_by_3 = 0;
+    //player_1 Corner
+    int player_1_life = lifeTotal;
+    int player_1_times_cast = 0;
+    int player_1_dmg_by_4 = 0;
+    int player_1_dmg_by_3 = 0;
+    int player_1_dmg_by_2 = 0;
+    //player_3 Corner
+    int player_3_life = lifeTotal;
+    int player_3_times_cast = 0;
+    int player_3_dmg_by_2 = 0;
+    int player_3_dmg_by_1 = 0;
+    int player_3_dmg_by_4 = 0;
+    //player_4 Corner
+    int player_4_life = lifeTotal;
+    int player_4_times_cast = 0;
+    int player_4_dmg_by_3 = 0;
+    int player_4_dmg_by_2 = 0;
+    int player_4_dmg_by_1 = 0;
 
+    public void playerThreeUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_3_life":
+                rid = R.id.player_3_life;
+                player_3_life += change;
+                counterToChange = player_3_life;
+                break;
+            case "player_3_times_cast":
+                rid = R.id.player_3_times_cast;
+                player_3_times_cast += change;
+                counterToChange = player_3_times_cast;
+                break;
+            case "player_3_dmg_by_2":
+                rid = R.id.player_3_cmdr_dmg_2;
+                player_3_dmg_by_2 += change;
+                counterToChange = player_3_dmg_by_2;
+                break;
+            case "player_3_dmg_by_1":
+                rid = R.id.player_3_cmdr_dmg_1;
+                player_3_dmg_by_1 += change;
+                counterToChange = player_3_dmg_by_1;
+                break;
+            case "player_3_dmg_by_4":
+                rid = R.id.player_3_cmdr_dmg_4;
+                player_3_dmg_by_4 += change;
+                counterToChange = player_3_dmg_by_4;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
     SharedPreferences settings;
 
     public void gLifeInc(View view) {
@@ -47,278 +96,122 @@ public class LifeTotals extends AppCompatActivity {
                 R.id.green_life);
         displayCounter(g_life, displayInteger);
     }
-
-    public void gLifeDec(View view) {
-        g_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_life);
-        displayCounter(g_life, displayInteger);
+    //End of tester
+    public void playerFourUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_4_life":
+                rid = R.id.player_4_life;
+                player_4_life += change;
+                counterToChange = player_4_life;
+                break;
+            case "player_4_times_cast":
+                rid = R.id.player_4_times_cast;
+                player_4_times_cast += change;
+                counterToChange = player_4_times_cast;
+                break;
+            case "player_4_dmg_by_2":
+                rid = R.id.player_4_cmdr_dmg_2;
+                player_4_dmg_by_2 += change;
+                counterToChange = player_4_dmg_by_2;
+                break;
+            case "player_4_dmg_by_1":
+                rid = R.id.player_4_cmdr_dmg_1;
+                player_4_dmg_by_1 += change;
+                counterToChange = player_4_dmg_by_1;
+                break;
+            case "player_4_dmg_by_3":
+                rid = R.id.player_4_cmdr_dmg_3;
+                player_4_dmg_by_3 += change;
+                counterToChange = player_4_dmg_by_3;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
     }
 
-    public void gTCInc(View view) {
-        g_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_times_cast);
-        displayCounter(g_times_cast, displayInteger);
+    public void playerOneUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_1_life":
+                rid = R.id.player_1_life;
+                player_1_life += change;
+                counterToChange = player_1_life;
+                break;
+            case "player_1_times_cast":
+                rid = R.id.player_1_times_cast;
+                player_1_times_cast += change;
+                counterToChange = player_1_times_cast;
+                break;
+            case "player_1_dmg_by_2":
+                rid = R.id.player_1_cmdr_dmg_2;
+                player_1_dmg_by_2 += change;
+                counterToChange = player_1_dmg_by_2;
+                break;
+            case "player_1_dmg_by_4":
+                rid = R.id.player_1_cmdr_dmg_4;
+                player_1_dmg_by_4 += change;
+                counterToChange = player_1_dmg_by_4;
+                break;
+            case "player_1_dmg_by_3":
+                rid = R.id.player_1_cmdr_dmg_3;
+                player_1_dmg_by_3 += change;
+                counterToChange = player_1_dmg_by_3;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
     }
 
-    public void gTCDec(View view) {
-        g_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_times_cast);
-        displayCounter(g_times_cast, displayInteger);
-    }
-
-    public void gWDmgInc(View view) {
-        g_dmg_by_w ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_cmdr_dmg_w);
-        displayCounter(g_dmg_by_w, displayInteger);
-    }
-
-    public void gWDmgDec(View view) {
-        g_dmg_by_w --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_cmdr_dmg_w);
-        displayCounter(g_dmg_by_w, displayInteger);
-    }
-
-    public void gUDmgInc(View view) {
-        g_dmg_by_u ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_cmdr_dmg_u);
-        displayCounter(g_dmg_by_u, displayInteger);
-    }
-
-    public void gUDmgDec(View view) {
-        g_dmg_by_u--;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_cmdr_dmg_u);
-        displayCounter(g_dmg_by_u, displayInteger);
-    }
-
-    public void gRDmgInc(View view) {
-        g_dmg_by_r ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_cmdr_dmg_r);
-        displayCounter(g_dmg_by_r, displayInteger);
-    }
-
-    public void gRDmgDec(View view) {
-        g_dmg_by_r --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.green_cmdr_dmg_r);
-        displayCounter(g_dmg_by_r, displayInteger);
-    }
-
-    public void rLifeInc(View view) {
-        r_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_life);
-        displayCounter(r_life, displayInteger);
-    }
-
-    public void rLifeDec(View view) {
-        r_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_life);
-        displayCounter(r_life, displayInteger);
-    }
-
-    public void rTCInc(View view) {
-        r_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_times_cast);
-        displayCounter(r_times_cast, displayInteger);
-    }
-
-    public void rTCDec(View view) {
-        r_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_times_cast);
-        displayCounter(r_times_cast, displayInteger);
-    }
-
-    public void rWDmgInc(View view) {
-        r_dmg_by_w ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_cmdr_dmg_w);
-        displayCounter(r_dmg_by_w, displayInteger);
-    }
-
-    public void rWDmgDec(View view) {
-        r_dmg_by_w --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_cmdr_dmg_w);
-        displayCounter(r_dmg_by_w, displayInteger);
-    }
-
-    public void rUDmgInc(View view) {
-        r_dmg_by_u ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_cmdr_dmg_u);
-        displayCounter(r_dmg_by_u, displayInteger);
-    }
-
-    public void rUDmgDec(View view) {
-        r_dmg_by_u --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_cmdr_dmg_u);
-        displayCounter(r_dmg_by_u, displayInteger);
-    }
-
-    public void rGDmgInc(View view) {
-        r_dmg_by_g ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_cmdr_dmg_g);
-        displayCounter(r_dmg_by_g, displayInteger);
-    }
-
-    public void rGDmgDec(View view) {
-        r_dmg_by_g --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.red_cmdr_dmg_g);
-        displayCounter(r_dmg_by_g, displayInteger);
-    }
-
-    public void uLifeInc(View view) {
-        u_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_life);
-        displayCounter(u_life, displayInteger);
-    }
-
-    public void uLifeDec(View view) {
-        u_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_life);
-        displayCounter(u_life, displayInteger);
-    }
-
-    public void uTCInc(View view) {
-        u_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_times_cast);
-        displayCounter(u_times_cast, displayInteger);
-    }
-
-    public void uTCDec(View view) {
-        u_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_times_cast);
-        displayCounter(u_times_cast, displayInteger);
-    }
-
-    public void uWDmgInc(View view) {
-        u_dmg_by_w ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_cmdr_dmg_w);
-        displayCounter(u_dmg_by_w, displayInteger);
-    }
-
-    public void uWDmgDec(View view) {
-        u_dmg_by_w --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_cmdr_dmg_w);
-        displayCounter(u_dmg_by_w, displayInteger);
-    }
-
-    public void uRDmgInc(View view) {
-        u_dmg_by_r ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_cmdr_dmg_r);
-        displayCounter(u_dmg_by_r, displayInteger);
-    }
-
-    public void uRDmgDec(View view) {
-        u_dmg_by_r --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_cmdr_dmg_r);
-        displayCounter(u_dmg_by_r, displayInteger);
-    }
-
-    public void uGDmgInc(View view) {
-        u_dmg_by_g ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_cmdr_dmg_g);
-        displayCounter(u_dmg_by_g, displayInteger);
-    }
-
-    public void uGDmgDec(View view) {
-        u_dmg_by_g --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.blue_cmdr_dmg_g);
-        displayCounter(u_dmg_by_g, displayInteger);
-    }
-
-    public void wLifeInc(View view) {
-        w_life ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_life);
-        displayCounter(w_life, displayInteger);
-    }
-
-    public void wLifeDec(View view) {
-        w_life --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_life);
-        displayCounter(w_life, displayInteger);
-    }
-
-    public void wTCInc(View view) {
-        w_times_cast ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_times_cast);
-        displayCounter(w_times_cast, displayInteger);
-    }
-
-    public void wTCDec(View view) {
-        w_times_cast --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_times_cast);
-        displayCounter(w_times_cast, displayInteger);
-    }
-
-    public void wUDmgInc(View view) {
-        w_dmg_by_u ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_cmdr_dmg_u);
-        displayCounter(w_dmg_by_u, displayInteger);
-    }
-
-    public void wUDmgDec(View view) {
-        w_dmg_by_u --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_cmdr_dmg_u);
-        displayCounter(w_dmg_by_u, displayInteger);
-    }
-
-    public void wRDmgInc(View view) {
-        w_dmg_by_r ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_cmdr_dmg_r);
-        displayCounter(w_dmg_by_r, displayInteger);
-    }
-
-    public void wRDmgDec(View view) {
-        w_dmg_by_r --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_cmdr_dmg_r);
-        displayCounter(w_dmg_by_r, displayInteger);
-    }
-
-    public void wGDmgInc(View view) {
-        w_dmg_by_g ++;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_cmdr_dmg_g);
-        displayCounter(w_dmg_by_g, displayInteger);
-    }
-
-    public void wGDmgDec(View view) {
-        w_dmg_by_g --;
-        TextView displayInteger = (TextView) findViewById(
-                R.id.white_cmdr_dmg_g);
-        displayCounter(w_dmg_by_g, displayInteger);
+    public void playerTwoUpdate(View v) {
+        //values generated through the xml tags on buttons
+        String tag = v.getTag().toString();
+        String field = tag.split(",")[0];
+        int change = Integer.parseInt(tag.split(",")[1]);
+        //values filled by Switch statement
+        int rid = 0;
+        int counterToChange = 0;
+        switch(field) {
+            case "player_2_life":
+                rid = R.id.player_2_life;
+                player_2_life += change;
+                counterToChange = player_2_life;
+                break;
+            case "player_2_times_cast":
+                rid = R.id.player_2_times_cast;
+                player_2_times_cast += change;
+                counterToChange = player_2_times_cast;
+                break;
+            case "player_2_dmg_by_1":
+                rid = R.id.player_2_cmdr_dmg_1;
+                player_2_dmg_by_1 += change;
+                counterToChange = player_2_dmg_by_1;
+                break;
+            case "player_2_dmg_by_4":
+                rid = R.id.player_2_cmdr_dmg_4;
+                player_2_dmg_by_4 += change;
+                counterToChange = player_2_dmg_by_4;
+                break;
+            case "player_2_dmg_by_3":
+                rid = R.id.player_2_cmdr_dmg_3;
+                player_2_dmg_by_3 += change;
+                counterToChange = player_2_dmg_by_3;
+                break;
+            default:
+        }
+        displayChange(rid,counterToChange);
     }
 
     public void gotoSettings(View view) {
@@ -329,34 +222,42 @@ public class LifeTotals extends AppCompatActivity {
         v.setText("" + number);
     }
 
+    public void displayChange(int cid, int counter) {
+        TextView displayInteger = (TextView) findViewById(cid);
+        displayCounter(counter, displayInteger);
+    }
+
+    public void restart(View view) {
+        resetCounters();
+    }
     //First attempt at a method that will allow the counters to be reset in-app
     //SIDE EFFECTS: All Life Totals will return to 40 and all counter will go to 0
     //Attempt one-the hardcode
-    public void reset(View view) {
-        //White Corner
-        w_life = 40;
-        w_times_cast = 0;
-        w_dmg_by_u = 0;
-        w_dmg_by_r = 0;
-        w_dmg_by_g = 0;
-        //Blue Corner
-        u_life = 40;
-        u_times_cast = 0;
-        u_dmg_by_r = 0;
-        u_dmg_by_g = 0;
-        u_dmg_by_w = 0;
-        //Green Corner
-        g_life = 40;
-        g_times_cast = 0;
-        g_dmg_by_w = 0;
-        g_dmg_by_u = 0;
-        g_dmg_by_r = 0;
-        //Red Corner
-        r_life = 40;
-        r_times_cast = 0;
-        r_dmg_by_g = 0;
-        r_dmg_by_w = 0;
-        r_dmg_by_u = 0;
+    public void resetCounters() {
+        //player_2 Corner
+        player_2_life = lifeTotal;
+        player_2_times_cast = 0;
+        player_2_dmg_by_1 = 0;
+        player_2_dmg_by_4 = 0;
+        player_2_dmg_by_3 = 0;
+        //player_1 Corner
+        player_1_life = lifeTotal;
+        player_1_times_cast = 0;
+        player_1_dmg_by_4 = 0;
+        player_1_dmg_by_3 = 0;
+        player_1_dmg_by_2 = 0;
+        //player_3 Corner
+        player_3_life = lifeTotal;
+        player_3_times_cast = 0;
+        player_3_dmg_by_2 = 0;
+        player_3_dmg_by_1 = 0;
+        player_3_dmg_by_4 = 0;
+        //player_4 Corner
+        player_4_life = lifeTotal;
+        player_4_times_cast = 0;
+        player_4_dmg_by_3 = 0;
+        player_4_dmg_by_2 = 0;
+        player_4_dmg_by_1 = 0;
         //Should display all changes to all counters done by the reset
         initializeAllCounters();
     }
@@ -397,69 +298,69 @@ public class LifeTotals extends AppCompatActivity {
         });
 
         setContentView(R.layout.activity_life_totals);
-
-        initializeAllCounters();
+        resetCounters();
     }
 
     private void initializeAllCounters() {
-        displayCounter(g_life, (TextView) findViewById(
-                R.id.green_life));
 
-        displayCounter(g_times_cast, (TextView) findViewById(
-                R.id.green_times_cast));
+        displayCounter(player_3_life, (TextView) findViewById(
+                R.id.player_3_life));
 
-        displayCounter(g_dmg_by_w, (TextView) findViewById(
-                R.id.green_cmdr_dmg_w));
+        displayCounter(player_3_times_cast, (TextView) findViewById(
+                R.id.player_3_times_cast));
 
-        displayCounter(g_dmg_by_u, (TextView) findViewById(
-                R.id.green_cmdr_dmg_u));
+        displayCounter(player_3_dmg_by_2, (TextView) findViewById(
+                R.id.player_3_cmdr_dmg_2));
 
-        displayCounter(g_dmg_by_r, (TextView) findViewById(
-                R.id.green_cmdr_dmg_r));
+        displayCounter(player_3_dmg_by_1, (TextView) findViewById(
+                R.id.player_3_cmdr_dmg_1));
 
-        displayCounter(r_life, (TextView) findViewById(
-                R.id.red_life));
+        displayCounter(player_3_dmg_by_4, (TextView) findViewById(
+                R.id.player_3_cmdr_dmg_4));
 
-        displayCounter(r_times_cast, (TextView) findViewById(
-                R.id.red_times_cast));
+        displayCounter(player_4_life, (TextView) findViewById(
+                R.id.player_4_life));
 
-        displayCounter(r_dmg_by_w, (TextView) findViewById(
-                R.id.red_cmdr_dmg_w));
+        displayCounter(player_4_times_cast, (TextView) findViewById(
+                R.id.player_4_times_cast));
 
-        displayCounter(r_dmg_by_u, (TextView) findViewById(
-                R.id.red_cmdr_dmg_u));
+        displayCounter(player_4_dmg_by_2, (TextView) findViewById(
+                R.id.player_4_cmdr_dmg_2));
 
-        displayCounter(r_dmg_by_g, (TextView) findViewById(
-                R.id.red_cmdr_dmg_g));
+        displayCounter(player_4_dmg_by_1, (TextView) findViewById(
+                R.id.player_4_cmdr_dmg_1));
 
-        displayCounter(u_life, (TextView) findViewById(
-                R.id.blue_life));
+        displayCounter(player_4_dmg_by_3, (TextView) findViewById(
+                R.id.player_4_cmdr_dmg_3));
 
-        displayCounter(u_times_cast, (TextView) findViewById(
-                R.id.blue_times_cast));
+        displayCounter(player_1_life, (TextView) findViewById(
+                R.id.player_1_life));
 
-        displayCounter(u_dmg_by_w, (TextView) findViewById(
-                R.id.blue_cmdr_dmg_w));
+        displayCounter(player_1_times_cast, (TextView) findViewById(
+                R.id.player_1_times_cast));
 
-        displayCounter(u_dmg_by_r, (TextView) findViewById(
-                R.id.blue_cmdr_dmg_r));
+        displayCounter(player_1_dmg_by_2, (TextView) findViewById(
+                R.id.player_1_cmdr_dmg_2));
 
-        displayCounter(u_dmg_by_g, (TextView) findViewById(
-                R.id.blue_cmdr_dmg_g));
+        displayCounter(player_1_dmg_by_4, (TextView) findViewById(
+                R.id.player_1_cmdr_dmg_4));
 
-        displayCounter(w_life, (TextView) findViewById(
-                R.id.white_life));
+        displayCounter(player_1_dmg_by_3, (TextView) findViewById(
+                R.id.player_1_cmdr_dmg_3));
 
-        displayCounter(w_times_cast, (TextView) findViewById(
-                R.id.white_times_cast));
+        displayCounter(player_2_life, (TextView) findViewById(
+                R.id.player_2_life));
 
-        displayCounter(w_dmg_by_u, (TextView) findViewById(
-                R.id.white_cmdr_dmg_u));
+        displayCounter(player_2_times_cast, (TextView) findViewById(
+                R.id.player_2_times_cast));
 
-        displayCounter(w_dmg_by_r, (TextView) findViewById(
-                R.id.white_cmdr_dmg_r));
+        displayCounter(player_2_dmg_by_1, (TextView) findViewById(
+                R.id.player_2_cmdr_dmg_1));
 
-        displayCounter(w_dmg_by_g, (TextView) findViewById(
-                R.id.white_cmdr_dmg_g));
+        displayCounter(player_2_dmg_by_4, (TextView) findViewById(
+                R.id.player_2_cmdr_dmg_4));
+
+        displayCounter(player_2_dmg_by_3, (TextView) findViewById(
+                R.id.player_2_cmdr_dmg_3));
     }
 }
