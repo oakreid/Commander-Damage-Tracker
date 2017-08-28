@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="p1_color"
+        android:title="Select Player 1 Color"
+        android:defaultValue="5"
+        android:entries="@array/color_names"
+        android:entryValues="@array/color_names">
+    </ListPreference>
+    <ListPreference
+        android:key="p2_color"
+        android:title="Select Player 2 Color"
+        android:defaultValue="4"
+        android:entries="@array/color_names"
+        android:entryValues="@array/color_names">
+    </ListPreference>
+    <ListPreference
+        android:key="p3_color"
+        android:title="Select Player 3 Color"
+        android:defaultValue="3"
+        android:entries="@array/color_names"
+        android:entryValues="@array/color_names">
+    </ListPreference>
+    <ListPreference
+        android:key="p4_color"
+        android:title="Select Player 4 Color"
+        android:defaultValue="2"
+        android:entries="@array/color_names"
+        android:entryValues="@array/color_names">
+    </ListPreference>
+
+    <ListPreference
+        android:key="starting_life"
+        android:title="Select Starting Life Totals"
+        android:defaultValue="40"
+        android:entries="@array/life_total_options"
+        android:entryValues="@array/life_total_options">
+    </ListPreference>
+
+</PreferenceScreen>
