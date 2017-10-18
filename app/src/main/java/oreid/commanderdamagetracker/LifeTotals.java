@@ -2,12 +2,20 @@ package oreid.commanderdamagetracker;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import static oreid.commanderdamagetracker.R.color.mtg_black;
+import static oreid.commanderdamagetracker.R.color.mtg_green;
+import static oreid.commanderdamagetracker.R.color.mtg_red;
+import static oreid.commanderdamagetracker.R.color.mtg_blue;
+import static oreid.commanderdamagetracker.R.color.mtg_white;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -261,7 +269,6 @@ public class LifeTotals extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
         settings = PreferenceManager.getDefaultSharedPreferences(this);
         settings.registerOnSharedPreferenceChangeListener(
@@ -277,7 +284,12 @@ public class LifeTotals extends AppCompatActivity {
                         lifeTotal = Integer.parseInt(sharedPreferences.getString(key, "40"));
                         break;
                     case "p1_color":
-                        //do stuff
+                        switch (sharedPreferences.getString(key, "Black")) {
+                            case "Black":
+                                Log.e("f1", "f1");
+                                setPlayerBackgroundColor(mtg_black, 1);
+                                Log.e("f2", "f2");
+                        }
                         break;
                     case "p2_color":
                         //do stuff
@@ -295,6 +307,11 @@ public class LifeTotals extends AppCompatActivity {
 
         setContentView(R.layout.activity_life_totals);
         resetCounters();
+    }
+
+    public void setPlayerBackgroundColor(int color, int player) {
+        View view = this.getWindow().findViewById(R.id.player_1_corner);
+        view.setBackgroundColor(color);
     }
 
     private void initializeAllCounters() {

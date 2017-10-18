@@ -68,7 +68,6 @@
 
                 <Button
                     android:id="@+id/player_2_life_minus"
-                    android:tag="player_2_life,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -80,6 +79,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_life,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -195,7 +195,6 @@
 
                 <Button
                     android:id="@+id/player_2_cmdr_dmg_1_minus"
-                    android:tag="player_2_dmg_by_1,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -207,8 +206,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_dmg_by_1,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_2_cmdr_dmg_1"
@@ -225,11 +225,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_2_cmdr_dmg_1_plus"
-                    android:tag="player_2_dmg_by_1,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -242,12 +241,12 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_dmg_by_1,1"
                     android:text="+"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_2_cmdr_dmg_4_minus"
-                    android:tag="player_2_dmg_by_4,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -259,8 +258,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_dmg_by_4,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_2_cmdr_dmg_4"
@@ -277,11 +277,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_2_cmdr_dmg_4_plus"
-                    android:tag="player_2_dmg_by_4,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -294,8 +293,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_dmg_by_4,1"
                     android:text="+"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -312,7 +312,6 @@
 
                 <Button
                     android:id="@+id/player_2_cmdr_dmg_3_minus"
-                    android:tag="player_2_dmg_by_3,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -324,8 +323,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_dmg_by_3,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_2_cmdr_dmg_3"
@@ -342,11 +342,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_2_cmdr_dmg_3_plus"
-                    android:tag="player_2_dmg_by_3,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -359,8 +358,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_dmg_by_3,-1"
                     android:text="+"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -391,7 +391,6 @@
 
                 <Button
                     android:id="@+id/player_1_life_minus"
-                    android:tag="player_1_life,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -403,6 +402,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_life,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -422,7 +422,6 @@
 
                 <Button
                     android:id="@+id/player_1_life_plus"
-                    android:tag="player_1_life,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -435,6 +434,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_life,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
@@ -453,7 +453,6 @@
 
                 <Button
                     android:id="@+id/player_1_times_cast_minus"
-                    android:tag="player_1_times_cast,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -465,6 +464,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_times_cast,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -487,7 +487,6 @@
 
                 <Button
                     android:id="@+id/player_1_times_cast_plus"
-                    android:tag="player_1_times_cast,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -500,6 +499,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_times_cast,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
@@ -518,7 +518,6 @@
 
                 <Button
                     android:id="@+id/player_1_cmdr_dmg_4_minus"
-                    android:tag="player_1_dmg_by_4,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -530,8 +529,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_dmg_by_4,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_1_cmdr_dmg_4"
@@ -548,11 +548,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_1_cmdr_dmg_4_plus"
-                    android:tag="player_1_dmg_by_4,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -565,12 +564,12 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_dmg_by_4,1"
                     android:text="+"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_1_cmdr_dmg_3_minus"
-                    android:tag="player_1_dmg_by_3,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -582,8 +581,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_dmg_by_3,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_1_cmdr_dmg_3"
@@ -600,11 +600,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_1_cmdr_dmg_3_plus"
-                    android:tag="player_1_dmg_by_3,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -617,8 +616,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_dmg_by_3,1"
                     android:text="+"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
             </LinearLayout>
 
             <LinearLayout
@@ -634,7 +634,6 @@
 
                 <Button
                     android:id="@+id/player_1_cmdr_dmg_2_minus"
-                    android:tag="player_1_dmg_by_2,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -646,8 +645,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_dmg_by_2,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_1_cmdr_dmg_2"
@@ -664,11 +664,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_1_cmdr_dmg_2_plus"
-                    android:tag="player_1_dmg_by_2,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -681,8 +680,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_1_dmg_by_2,1"
                     android:text="+"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
         </GridLayout>
@@ -840,7 +840,6 @@
 
                 <Button
                     android:id="@+id/player_3_cmdr_dmg_2_minus"
-                    android:tag="player_3_dmg_by_2,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -852,8 +851,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_dmg_by_2,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_3_cmdr_dmg_2"
@@ -870,11 +870,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_3_cmdr_dmg_2_plus"
-                    android:tag="player_3_dmg_by_2,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -887,12 +886,12 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_dmg_by_2,1"
                     android:text="+"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_3_cmdr_dmg_1_minus"
-                    android:tag="player_3_dmg_by_1,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -904,8 +903,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_dmg_by_1,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_3_cmdr_dmg_1"
@@ -922,11 +922,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_3_cmdr_dmg_1_plus"
-                    android:tag="player_3_dmg_by_1,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -939,8 +938,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_dmg_by_1,1"
                     android:text="+"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
             </LinearLayout>
 
             <LinearLayout
@@ -956,7 +956,6 @@
 
                 <Button
                     android:id="@+id/player_3_cmdr_dmg_4_minus"
-                    android:tag="player_3_dmg_by_4,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -968,8 +967,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_dmg_by_4,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_3_cmdr_dmg_4"
@@ -986,11 +986,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_3_cmdr_dmg_4_plus"
-                    android:tag="player_3_dmg_by_4,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -1003,8 +1002,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_dmg_by_4,1"
                     android:text="+"
-                    android:textColor="@color/mtg_red" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
 
@@ -1163,7 +1163,6 @@
 
                 <Button
                     android:id="@+id/player_4_cmdr_dmg_3_minus"
-                    android:tag="player_4_dmg_by_3,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -1175,8 +1174,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_dmg_by_3,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_4_cmdr_dmg_3"
@@ -1193,11 +1193,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_4_cmdr_dmg_3_plus"
-                    android:tag="player_4_dmg_by_3,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -1210,12 +1209,12 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_dmg_by_3,1"
                     android:text="+"
-                    android:textColor="@color/mtg_green" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_4_cmdr_dmg_2_minus"
-                    android:tag="player_4_dmg_by_2,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -1227,8 +1226,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_dmg_by_2,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_4_cmdr_dmg_2"
@@ -1245,11 +1245,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_4_cmdr_dmg_2_plus"
-                    android:tag="player_4_dmg_by_2,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -1262,8 +1261,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_dmg_by_2,1"
                     android:text="+"
-                    android:textColor="@color/mtg_white" />
+                    android:textColor="@color/mtg_font" />
             </LinearLayout>
 
             <LinearLayout
@@ -1279,7 +1279,6 @@
 
                 <Button
                     android:id="@+id/player_4_cmdr_dmg_1_minus"
-                    android:tag="player_4_dmg_by_1,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -1291,8 +1290,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_dmg_by_1,-1"
                     android:text="-"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
                 <EditText
                     android:id="@+id/player_4_cmdr_dmg_1"
@@ -1309,11 +1309,10 @@
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
                 <Button
                     android:id="@+id/player_4_cmdr_dmg_1_plus"
-                    android:tag="player_4_dmg_by_1,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -1326,8 +1325,9 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_dmg_by_1,1"
                     android:text="+"
-                    android:textColor="@color/mtg_blue" />
+                    android:textColor="@color/mtg_font" />
 
             </LinearLayout>
         </GridLayout>
