@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -284,21 +285,16 @@ public class LifeTotals extends AppCompatActivity {
                         lifeTotal = Integer.parseInt(sharedPreferences.getString(key, "40"));
                         break;
                     case "p1_color":
-                        switch (sharedPreferences.getString(key, "Black")) {
-                            case "Black":
-                                Log.e("f1", "f1");
-                                setPlayerBackgroundColor(mtg_black, 1);
-                                Log.e("f2", "f2");
-                        }
+                        alterColor(sharedPreferences.getString(key, "Black"), 1);
                         break;
                     case "p2_color":
-                        //do stuff
+                        alterColor(sharedPreferences.getString(key, "Black"), 2);
                         break;
                     case "p3_color":
-                        //do stuff
+                        alterColor(sharedPreferences.getString(key, "Black"), 3);
                         break;
                     case "p4_color":
-                        //do stuff
+                        alterColor(sharedPreferences.getString(key, "Black"), 4);
                         break;
                  }
                  initializeAllCounters();
@@ -309,9 +305,40 @@ public class LifeTotals extends AppCompatActivity {
         resetCounters();
     }
 
-    public void setPlayerBackgroundColor(int color, int player) {
-        View view = this.getWindow().findViewById(R.id.player_1_corner);
-        view.setBackgroundColor(color);
+    public void alterColor(String color, int player) {
+        View view = null;
+        switch (player) {
+            case 1:
+                view = this.getWindow().findViewById(R.id.player_1_corner);
+                break;
+            case 2:
+                view = this.getWindow().findViewById(R.id.player_2_corner);
+                break;
+            case 3:
+                view = this.getWindow().findViewById(R.id.player_3_corner);
+                break;
+            case 4:
+                view = this.getWindow().findViewById(R.id.player_4_corner);
+                break;
+        }
+
+        switch (color) {
+            case "Black":
+                view.setBackgroundColor(ContextCompat.getColor(this, mtg_black));
+                break;
+            case "Green":
+                view.setBackgroundColor(ContextCompat.getColor(this, mtg_green));
+                break;
+            case "Blue":
+                view.setBackgroundColor(ContextCompat.getColor(this, mtg_blue));
+                break;
+            case "Red":
+                view.setBackgroundColor(ContextCompat.getColor(this, mtg_red));
+                break;
+            case "White":
+                view.setBackgroundColor(ContextCompat.getColor(this, mtg_white));
+                break;
+        }
     }
 
     private void initializeAllCounters() {

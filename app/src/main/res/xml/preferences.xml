@@ -4,28 +4,28 @@
     <ListPreference
         android:key="p1_color"
         android:title="Select Player 1 Color"
-        android:defaultValue="5"
+        android:defaultValue="@string/blue"
         android:entries="@array/color_names"
         android:entryValues="@array/color_names">
     </ListPreference>
     <ListPreference
         android:key="p2_color"
         android:title="Select Player 2 Color"
-        android:defaultValue="4"
+        android:defaultValue="@string/white"
         android:entries="@array/color_names"
         android:entryValues="@array/color_names">
     </ListPreference>
     <ListPreference
         android:key="p3_color"
         android:title="Select Player 3 Color"
-        android:defaultValue="3"
+        android:defaultValue="@string/green"
         android:entries="@array/color_names"
         android:entryValues="@array/color_names">
     </ListPreference>
     <ListPreference
         android:key="p4_color"
         android:title="Select Player 4 Color"
-        android:defaultValue="2"
+        android:defaultValue="@string/red"
         android:entries="@array/color_names"
         android:entryValues="@array/color_names">
     </ListPreference>
