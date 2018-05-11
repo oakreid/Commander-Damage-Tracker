@@ -2,8 +2,6 @@ package oreid.commanderdamagetracker;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -61,6 +59,34 @@ public class LifeTotals extends AppCompatActivity {
     int player_4_dmg_by_1 = 0;
     //Settings
     SharedPreferences settings;
+    SharedPreferences.OnSharedPreferenceChangeListener settingslistener =
+            new SharedPreferences.OnSharedPreferenceChangeListener() {
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            switch (key) {
+                case "starting_life":
+                    player_2_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                    player_4_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                    player_3_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                    player_1_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                    lifeTotal = Integer.parseInt(sharedPreferences.getString(key, "40"));
+                    break;
+                case "p1_color":
+                    alterColor(sharedPreferences.getString(key, "Black"), 1);
+                    break;
+                case "p2_color":
+                    alterColor(sharedPreferences.getString(key, "Black"), 2);
+                    break;
+                case "p3_color":
+                    alterColor(sharedPreferences.getString(key, "Black"), 3);
+                    break;
+                case "p4_color":
+                    alterColor(sharedPreferences.getString(key, "Black"), 4);
+                    break;
+            }
+            initializeAllCounters();
+        }
+    };
 
     public void playerThreeUpdate(View v) {
         //values generated through the xml tags on buttons
@@ -272,40 +298,13 @@ public class LifeTotals extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
         settings = PreferenceManager.getDefaultSharedPreferences(this);
-        settings.registerOnSharedPreferenceChangeListener(
-                new SharedPreferences.OnSharedPreferenceChangeListener() {
-            @Override
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                switch (key) {
-                    case "starting_life":
-                        player_2_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        player_4_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        player_3_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        player_1_life = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        lifeTotal = Integer.parseInt(sharedPreferences.getString(key, "40"));
-                        break;
-                    case "p1_color":
-                        alterColor(sharedPreferences.getString(key, "Black"), 1);
-                        break;
-                    case "p2_color":
-                        alterColor(sharedPreferences.getString(key, "Black"), 2);
-                        break;
-                    case "p3_color":
-                        alterColor(sharedPreferences.getString(key, "Black"), 3);
-                        break;
-                    case "p4_color":
-                        alterColor(sharedPreferences.getString(key, "Black"), 4);
-                        break;
-                 }
-                 initializeAllCounters();
-            }
-        });
+        settings.registerOnSharedPreferenceChangeListener(settingslistener);
 
         setContentView(R.layout.activity_life_totals);
-        resetCounters();
+        initializeAllCounters();
     }
 
-    public void alterColor(String color, int player) {
+    private void alterColor(String color, int player) {
         View view = null;
         switch (player) {
             case 1:

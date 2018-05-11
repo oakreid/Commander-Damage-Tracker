@@ -358,7 +358,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
-                    android:tag="player_2_dmg_by_3,-1"
+                    android:tag="player_2_dmg_by_3,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
