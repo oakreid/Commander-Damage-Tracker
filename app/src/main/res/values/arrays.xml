@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="color_names">
-        <item>Black</item>
-        <item>Red</item>
-        <item>Green</item>
-        <item>White</item>
-        <item>Blue</item>
+        <item>@string/black</item>
+        <item>@string/red</item>
+        <item>@string/green</item>
+        <item>@string/white</item>
+        <item>@string/blue</item>
     </string-array>
 
     <string-array name="life_total_options">
