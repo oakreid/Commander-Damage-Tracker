@@ -99,7 +99,6 @@
 
                 <Button
                     android:id="@+id/player_2_life_plus"
-                    android:tag="player_2_life,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -112,6 +111,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_life,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
@@ -130,7 +130,6 @@
 
                 <Button
                     android:id="@+id/player_2_times_cast_minus"
-                    android:tag="player_2_times_cast,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -142,6 +141,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_times_cast,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -164,7 +164,6 @@
 
                 <Button
                     android:id="@+id/player_2_times_cast_plus"
-                    android:tag="player_2_times_cast,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -177,6 +176,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_2_times_cast,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
@@ -713,7 +713,6 @@
 
                 <Button
                     android:id="@+id/player_3_life_minus"
-                    android:tag="player_3_life,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -725,6 +724,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_life,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -744,7 +744,6 @@
 
                 <Button
                     android:id="@+id/player_3_life_plus"
-                    android:tag="player_3_life,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -757,6 +756,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_life,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
@@ -775,7 +775,6 @@
 
                 <Button
                     android:id="@+id/player_3_times_cast_minus"
-                    android:tag="player_3_times_cast,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -787,6 +786,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_times_cast,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -809,7 +809,6 @@
 
                 <Button
                     android:id="@+id/player_3_times_cast_plus"
-                    android:tag="player_3_times_cast,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -822,6 +821,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_3_times_cast,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
@@ -1036,7 +1036,6 @@
 
                 <Button
                     android:id="@+id/player_4_life_minus"
-                    android:tag="player_4_life,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -1048,6 +1047,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_life,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -1067,7 +1067,6 @@
 
                 <Button
                     android:id="@+id/player_4_life_plus"
-                    android:tag="player_4_life,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -1080,6 +1079,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_life,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
@@ -1098,7 +1098,6 @@
 
                 <Button
                     android:id="@+id/player_4_times_cast_minus"
-                    android:tag="player_4_times_cast,-1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="left"
@@ -1110,6 +1109,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_times_cast,-1"
                     android:text="-"
                     android:textColor="@color/mtg_font" />
 
@@ -1132,7 +1132,6 @@
 
                 <Button
                     android:id="@+id/player_4_times_cast_plus"
-                    android:tag="player_4_times_cast,1"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
@@ -1145,6 +1144,7 @@
                     android:shadowDy="0.0"
                     android:shadowRadius="2.0"
                     android:stateListAnimator="@null"
+                    android:tag="player_4_times_cast,1"
                     android:text="+"
                     android:textColor="@color/mtg_font" />
 
