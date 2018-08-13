@@ -1,4 +1,4 @@
-Compiling and creating a .apk of this code will create a small app that can support up to four players in a multiplayer commander game with individual casting counts and commander damage trackers on the bottom of each player.
+A generated APK can be found in app/CommanderDamageTracker.apk
 
 V1.0:
 First working version, no color change support
@@ -10,8 +10,5 @@ Changed all number colors to black to prepare color change support
 V2.1:
 Settings menu now works 100% (quadrant colors + default life totals)
 
-
-TODO:
-- fix app state not saving onDestroy
-- rework layout to be more even
-- make font sizes scalable to larger/smaller screens
+V2.2
+UI scales better/more evenly with different sized devices.
